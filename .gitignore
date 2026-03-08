@@ -1,7 +1,27 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
-.env
 *.log
-.DS_Store
-coverage/
 *.tsbuildinfo
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Claude Code
+.claude/
