@@ -1,153 +1,95 @@
-# GitHub MCP Server
+# Claude Code Projects
 
-A Model Context Protocol (MCP) server for GitHub that provides tools to interact with repositories, issues, pull requests, and more.
+Welcome to my personal development repository! This repository contains various projects I'm working on, primarily focused on AI, automation, and developer tools.
 
-## Features
+## 🚀 Projects
 
-- **Repository Management**: List and get repository details
-- **Issue Tracking**: Create, read, update issues and comments
-- **Pull Request Management**: Create, read, merge PRs and comments
-- **User Information**: Get authenticated user and user profiles
-- **Auto-retry**: Built-in retry logic with exponential backoff
-- **Type-safe**: Full TypeScript support
+### 1. GitHub MCP Server
+**Location**: [`github-mcp/`](./github-mcp/)
 
-## Installation
+A Model Context Protocol (MCP) server that provides seamless integration between AI assistants and GitHub's API.
 
+**Features**:
+- 16 GitHub tools for repositories, issues, pull requests, and comments
+- TypeScript implementation with full type safety
+- Automatic retry logic with exponential backoff
+- Structured logging and error handling
+
+**Quick Start**:
 ```bash
+cd github-mcp
 npm install
-```
-
-## Configuration
-
-Create a `.env` file from the example:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and add your GitHub Personal Access Token:
-
-```env
-GITHUB_PAT=your_actual_token_here
-```
-
-### Creating a GitHub Token
-
-1. Go to https://github.com/settings/tokens
-2. Click "Generate new token" → "Generate new token (classic)"
-3. Select the following scopes:
-   - `repo` - Full control of private repositories
-   - `read:org` - Read org and team membership
-   - `read:user` - Read user profile data
-   - `user:email` - Read user email addresses
-4. Generate and copy the token
-5. Paste it into your `.env` file
-
-## Building
-
-```bash
 npm run build
-```
-
-## Testing Connection
-
-```bash
-npm run test-connection
-```
-
-This will:
-- Get your authenticated user profile
-- List your repositories
-- Fetch a public repository to verify API access
-
-## Running the Server
-
-```bash
+cp .env.example .env
+# Add your GitHub token to .env
 npm start
 ```
 
-## Available Tools
+**Documentation**:
+- [README](./github-mcp/README.md) - User documentation
+- [OPERATIONS](./github-mcp/OPERATIONS.md) - Complete operations reference
+- [CLAUDE](./github-mcp/CLAUDE.md) - Development context
 
-### Repository Tools
-- `github_list_repositories` - List your repositories
-- `github_get_repository` - Get details of a specific repository
+### 2. Weather MCP Server
+**Location**: [`weather-mcp/`](./weather-mcp/)
 
-### Issue Tools
-- `github_list_issues` - List issues in a repository
-- `github_get_issue` - Get details of a specific issue
-- `github_create_issue` - Create a new issue
-- `github_update_issue` - Update an existing issue
+A Model Context Protocol (MCP) server that provides weather information tools using the OpenWeatherMap API.
 
-### Pull Request Tools
-- `github_list_pull_requests` - List pull requests
-- `github_get_pull_request` - Get details of a specific PR
-- `github_create_pull_request` - Create a new PR
-- `github_merge_pull_request` - Merge a PR
+**Features**:
+- 3 weather tools: current weather, forecasts, and location search
+- Global coverage with accurate weather data
+- Free API tier (1,000 calls/day)
+- TypeScript implementation with full type safety
 
-### Comment Tools
-- `github_create_issue_comment` - Comment on an issue
-- `github_list_issue_comments` - List issue comments
-- `github_create_pull_request_comment` - Comment on a PR
-- `github_list_pull_request_comments` - List PR comments
-
-### User Tools
-- `github_get_authenticated_user` - Get your user profile
-- `github_get_user` - Get any user's profile
-
-## Usage with Claude Code
-
-Add to your Claude Code MCP configuration:
-
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "node",
-      "args": ["/path/to/github-mcp/dist/index.js"],
-      "env": {
-        "GITHUB_PAT": "your_token_here"
-      }
-    }
-  }
-}
-```
-
-## Development
-
-### Watch mode for development
+**Quick Start**:
 ```bash
-npm run dev
+cd weather-mcp
+npm install
+npm run build
+cp .env.example .env
+# Add your OpenWeatherMap API key to .env
+npm start
 ```
 
-### Run tests
-```bash
-npm test
+**Documentation**:
+- [README](./weather-mcp/README.md) - User documentation
+- [OpenWeatherMap API](https://openweathermap.org/api) - API documentation
+
+## 🛠️ Technology Stack
+
+- **TypeScript** - Type-safe development
+- **Node.js** - Runtime environment
+- **Model Context Protocol** - AI integration standard
+- **GitHub API** - Platform integration
+- **OpenWeatherMap API** - Weather data
+
+## 📁 Repository Structure
+
+```
+claude-code/
+├── github-mcp/          # GitHub MCP Server
+├── weather-mcp/         # Weather MCP Server
+├── PROJECTS.md          # Detailed project information
+├── CONTRIBUTING.md      # Contribution guidelines
+└── README.md            # This file
 ```
 
-### Format code
-```bash
-npm run format
-```
+## 📈 Project Statistics
 
-### Lint code
-```bash
-npm run lint
-```
+- **Total Projects**: 2
+- **Active Projects**: 2
+- **Languages**: TypeScript, JavaScript
+- **Main Technologies**: MCP, Node.js, GitHub API, OpenWeatherMap API
 
-## Architecture
+## 📝 License
 
-- **src/config.ts** - Environment configuration with Zod validation
-- **src/services/github/index.ts** - GitHub API client (singleton)
-- **src/tools/github.ts** - Tool definitions and handlers
-- **src/index.ts** - MCP server entry point
+Each project may have its own license. Please check the individual project directories for specific licensing information.
 
-## Error Handling
+## 👨‍💻 Author
 
-The server includes:
-- Automatic retry with exponential backoff for rate limits (403) and server errors (5xx)
-- Structured logging with Pino
-- Type-safe API responses
+**Karthick Rajkumar**
+- GitHub: [@karthickrajkumarn](https://github.com/karthickrajkumarn)
 
-## License
+---
 
-MIT
+**Note**: This is a personal repository for learning and development. Projects here are maintained as part of my journey in software development and AI integration.
