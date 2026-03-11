@@ -30,26 +30,56 @@ npm start
 - [OPERATIONS](./github-mcp/OPERATIONS.md) - Complete operations reference
 - [CLAUDE](./github-mcp/CLAUDE.md) - Development context
 
+### 2. Weather MCP Server
+**Location**: [`weather-mcp/`](./weather-mcp/)
+
+A Model Context Protocol (MCP) server that provides weather information tools using the OpenWeatherMap API.
+
+**Features**:
+- 3 weather tools: current weather, forecasts, and location search
+- Global coverage with accurate weather data
+- Free API tier (1,000 calls/day)
+- TypeScript implementation with full type safety
+
+**Quick Start**:
+```bash
+cd weather-mcp
+npm install
+npm run build
+cp .env.example .env
+# Add your OpenWeatherMap API key to .env
+npm start
+```
+
+**Documentation**:
+- [README](./weather-mcp/README.md) - User documentation
+- [OpenWeatherMap API](https://openweathermap.org/api) - API documentation
+
 ## 🛠️ Technology Stack
 
 - **TypeScript** - Type-safe development
 - **Node.js** - Runtime environment
 - **Model Context Protocol** - AI integration standard
 - **GitHub API** - Platform integration
+- **OpenWeatherMap API** - Weather data
 
 ## 📁 Repository Structure
 
 ```
 claude-code/
 ├── github-mcp/          # GitHub MCP Server
+├── weather-mcp/         # Weather MCP Server
 ├── PROJECTS.md          # Detailed project information
 ├── CONTRIBUTING.md      # Contribution guidelines
 └── README.md            # This file
 ```
 
-## 🔜 Coming Soon
+## 📈 Project Statistics
 
-More projects will be added to this repository as I continue developing AI-powered tools and automation solutions.
+- **Total Projects**: 2
+- **Active Projects**: 2
+- **Languages**: TypeScript, JavaScript
+- **Main Technologies**: MCP, Node.js, GitHub API, OpenWeatherMap API
 
 ## 📝 License
 

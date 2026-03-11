@@ -134,6 +134,121 @@ MIT License - See LICENSE file in project directory
 
 ---
 
+### 2. Weather MCP Server
+
+**Status**: ✅ Active | **Version**: 0.1.0 | **Last Updated**: March 2026
+
+#### Overview
+A Model Context Protocol server that provides weather information tools including current weather, forecasts, and location search using the OpenWeatherMap API.
+
+#### Description
+The Weather MCP Server enables AI assistants to provide accurate weather information for any location worldwide. It offers current conditions, multi-day forecasts, and location search capabilities.
+
+#### Key Features
+- **3 Weather Tools**: Current weather, forecasts, and location search
+- **Global Coverage**: Weather data for any location worldwide
+- **Free API**: Uses OpenWeatherMap free tier (1,000 calls/day)
+- **Type-Safe**: Full TypeScript implementation
+- **Reliable**: Built-in error handling and API validation
+
+#### Available Tools
+1. **Current Weather** (1 tool)
+   - Get real-time weather conditions for any location
+   - Temperature, humidity, wind, visibility, and more
+
+2. **Weather Forecast** (1 tool)
+   - Get up to 5-day weather forecasts
+   - Daily min/max temperatures and conditions
+
+3. **Location Search** (1 tool)
+   - Search for locations by name
+   - Get coordinates and location details
+
+#### Technology Stack
+- TypeScript 5.7
+- Node.js (>=20.0.0)
+- @modelcontextprotocol/sdk 1.0.4
+- Axios 1.7.9
+- Pino 9.6.0 (logging)
+- Zod 3.24.1 (validation)
+- OpenWeatherMap API
+
+#### Project Structure
+```
+weather-mcp/
+├── src/
+│   ├── services/         # Weather API service
+│   ├── tools/            # MCP tool definitions
+│   ├── types/            # TypeScript types
+│   ├── utils/            # Utilities
+│   ├── config.ts         # Configuration
+│   ├── index.ts          # Entry point
+│   └── demo-weather.ts   # Demo script
+├── dist/                 # Compiled JavaScript
+├── README.md             # User documentation
+└── package.json          # Dependencies
+```
+
+#### Quick Start
+```bash
+# Clone repository
+git clone https://github.com/karthickrajkumarn/Claude_Code.git
+cd Claude_Code/weather-mcp
+
+# Install dependencies
+npm install
+
+# Build project
+npm run build
+
+# Configure environment
+cp .env.example .env
+# Add your OpenWeatherMap API key to .env
+
+# Start server
+npm start
+
+# Run demo
+npm test
+```
+
+#### Configuration
+Required environment variables:
+- `WEATHER_API_KEY` - OpenWeatherMap API key (free)
+  - Get your key at: https://openweathermap.org/api
+
+Optional variables:
+- `WEATHER_API_BASE_URL` - API base URL (default: OpenWeatherMap)
+- `DEFAULT_UNITS` - Temperature units: metric/imperial/kelvin (default: metric)
+- `DEFAULT_LANGUAGE` - Weather description language (default: en)
+- `LOG_LEVEL` - Logging level (default: info)
+- `REQUEST_TIMEOUT` - Request timeout in ms (default: 30000)
+
+#### Documentation
+- [User Guide](./weather-mcp/README.md) - Getting started guide
+- [OpenWeatherMap API](https://openweathermap.org/api) - API documentation
+
+#### Use Cases
+- **Weather Assistance**: Provide real-time weather information
+- **Planning**: Help with travel and event planning
+- **Comparisons**: Compare weather across multiple locations
+- **Forecasts**: Get multi-day weather predictions
+
+#### Future Enhancements
+- Weather alerts and warnings
+- Historical weather data
+- Air quality information
+- UV index and pollen data
+- Weather maps and imagery
+
+#### Contributing
+Contributions are welcome! Please read the development guide first.
+
+#### License
+MIT License - See LICENSE file in project directory
+
+---
+
 ## 🚀 Adding New Projects
 
 When adding a new project to this repository, please:
@@ -159,12 +274,12 @@ new-project/
 
 ## 📊 Project Statistics
 
-- **Total Projects**: 1
-- **Active Projects**: 1
+- **Total Projects**: 2
+- **Active Projects**: 2
 - **Languages**: TypeScript, JavaScript
-- **Main Technologies**: MCP, Node.js, GitHub API
+- **Main Technologies**: MCP, Node.js, GitHub API, OpenWeatherMap API
 
 ---
 
-**Last Updated**: March 8, 2026
+**Last Updated**: March 11, 2026
 **Repository Maintainer**: Karthick Rajkumar
